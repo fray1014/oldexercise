@@ -2,7 +2,7 @@ import java.util.*;
 
 public class LeetCode {
     public static void main(String[] args){
-        Solution6.show();
+
     }
     /*寻找两数之和（两遍哈希表）*/
     //给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
@@ -261,9 +261,47 @@ public class LeetCode {
     /**
      * 得到一个数据流中的中位数*/
     public static class Solution6{
-        public static Vector<Integer> vec=new Vector<>(10,-1);
-        public static void show(){
-            System.out.println(vec.size());
+        //小顶堆，用该堆记录位于中位数后面的部分
+        private PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();
+
+        //大顶堆，用该堆记录位于中位数前面的部分
+        private PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(15, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o2 - o1;
+            }
+        });
+
+        //记录偶数个还是奇数个
+        int count = 0;
+        //每次插入小顶堆的是当前大顶堆中最大的数
+        //每次插入大顶堆的是当前小顶堆中最小的数
+        //这样保证小顶堆中的数永远大于等于大顶堆中的数
+        //中位数就可以方便地从两者的根结点中获取了
+        //优先队列中的常用方法有：增加元素，删除栈顶，获得栈顶元素，和队列中的几个函数应该是一样的
+        //offer peek poll,
+        public void Insert(Integer num) {
+            //个数为偶数的话，则先插入到大顶堆，然后将大顶堆中最大的数插入小顶堆中
+            if(count % 2 == 0){
+                maxHeap.offer(num);
+                int max = maxHeap.poll();
+                minHeap.offer(max);
+            }else{
+                //个数为奇数的话，则先插入到小顶堆，然后将小顶堆中最小的数插入大顶堆中
+                minHeap.offer(num);
+                int min = minHeap.poll();
+                maxHeap.offer(min);
+            }
+            count++;
+        }
+        public Double GetMedian() {
+            //当前为偶数个，则取小顶堆和大顶堆的堆顶元素求平均
+            if(count % 2 == 0){
+                return new Double(minHeap.peek() + maxHeap.peek())/2;
+            }else{
+                //当前为奇数个，则直接从小顶堆中取元素即可，所以我们要保证小顶堆中的元素的个数。
+                return new Double(minHeap.peek());
+            }
         }
     }
 }

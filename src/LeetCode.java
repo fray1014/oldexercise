@@ -2,9 +2,7 @@ import java.util.*;
 
 public class LeetCode {
     public static void main(String[] args){
-        int num1=-99;
-        int num2=5;
-        System.out.println(Solution2.Add(num1,num2));
+        Solution6.show();
     }
     /*寻找两数之和（两遍哈希表）*/
     //给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
@@ -257,6 +255,15 @@ public class LeetCode {
                         return (int) Math.pow(3, target / 3) * 2;
                 }
                 return 0;
+        }
+    }
+
+    /**
+     * 得到一个数据流中的中位数*/
+    public static class Solution6{
+        public static Vector<Integer> vec=new Vector<>(10,-1);
+        public static void show(){
+            System.out.println(vec.size());
         }
     }
 }

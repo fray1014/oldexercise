@@ -2,7 +2,11 @@ import java.util.*;
 
 public class LeetCode {
     public static void main(String[] args){
-
+        int a=1;
+        if(a>0)
+            System.out.println(a);
+        if(a==1)
+            System.out.println(a-1);
     }
     /*寻找两数之和（两遍哈希表）*/
     //给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
@@ -302,6 +306,95 @@ public class LeetCode {
                 //当前为奇数个，则直接从小顶堆中取元素即可，所以我们要保证小顶堆中的元素的个数。
                 return new Double(minHeap.peek());
             }
+        }
+    }
+
+    /**
+     * 二叉树镜像*/
+    public static class Solution7{
+        public void Mirror(TreeNode root) {
+            if(root==null) {
+                return;
+            }
+            TreeNode tmp=root.left;
+            root.left=root.right;
+            root.right=tmp;
+            Mirror(root.left);
+            Mirror(root.right);
+
+        }
+    }
+
+    /**从上到下按层打印二叉树，同一层结点从左至右输出。每一层输出一行*/
+    public static class Solution8 {
+        ArrayList<ArrayList<Integer> > Print(TreeNode pRoot) {
+            ArrayList<ArrayList<Integer>> thelist = new ArrayList<ArrayList<Integer>>();
+            if(pRoot==null)return thelist; //这里要求返回thelist而不是null
+            Queue<TreeNode> q=new LinkedList<TreeNode>();
+            q.offer(pRoot);
+            while(!q.isEmpty()){
+                ArrayList<Integer> list=new ArrayList<Integer>();
+                int s=q.size();
+                for(int i=0;i<s;i++){
+                    TreeNode tmp=q.poll();
+                    list.add(tmp.val);
+                    if(tmp.left!=null)
+                        q.offer(tmp.left);
+                    if(tmp.right!=null)
+                        q.offer(tmp.right);
+                }
+                thelist.add(list);
+            }
+            return thelist;
+        }
+
+    }
+
+    /**给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回。
+     * 注意，树中的结点不仅包含左右子结点，同时包含指向父结点的指针。
+     *
+     * 1.有右子树，下一结点是右子树中的最左结点，例如 B，下一结点是 H
+     *
+     * 2.无右子树，且结点是该结点父结点的左子树，则下一结点是该结点的父结点，例如 H，下一结点是 E
+     *
+     * 3.无右子树，且结点是该结点父结点的右子树，则我们一直沿着父结点追朔，直到找到某个结点是其父结点的左子树，
+     * 如果存在这样的结点，那么这个结点的父结点就是我们要找的下一结点。例如 I，下一结点是 A；
+     * 例如 G，并没有符合情况的结点，所以 G 没有下一结点*/
+    public class TreeLinkNode {
+        int val;
+        TreeLinkNode left = null;
+        TreeLinkNode right = null;
+        TreeLinkNode next = null;
+
+        TreeLinkNode(int val) {
+            this.val = val;
+        }
+    }
+
+    public static class Solution9 {
+
+        public TreeLinkNode GetNext(TreeLinkNode pNode) {
+            // 1.
+            if (pNode.right != null) {
+                TreeLinkNode pRight = pNode.right;
+                while (pRight.left != null) {
+                    pRight = pRight.left;
+                }
+                return pRight;
+            }
+            // 2.
+            if (pNode.next != null && pNode.next.left == pNode) {
+                return pNode.next;
+            }
+            // 3.
+            if (pNode.next != null) {
+                TreeLinkNode pNext = pNode.next;
+                while (pNext.next != null && pNext.next.right == pNext) {
+                    pNext = pNext.next;
+                }
+                return pNext.next;
+            }
+            return null;
         }
     }
 }

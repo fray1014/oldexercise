@@ -2,11 +2,15 @@ import java.util.*;
 
 public class LeetCode {
     public static void main(String[] args){
-        int a=1;
-        if(a>0)
-            System.out.println(a);
-        if(a==1)
-            System.out.println(a-1);
+        Solution11 s=new Solution11();
+        s.Insert('g');
+        s.Insert('o');
+        s.Insert('o');
+        s.Insert('g');
+        s.Insert('l');
+        System.out.println(s.q);
+        System.out.println(s.hm);
+        System.out.println(s.FirstAppearingOnce());
     }
     /*寻找两数之和（两遍哈希表）*/
     //给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
@@ -29,7 +33,7 @@ public class LeetCode {
     //如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。
     public class ListNode{
         int val;
-        ListNode next;
+        ListNode next=null;
         ListNode(int x){val=x;}
     }
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
@@ -395,6 +399,61 @@ public class LeetCode {
                 return pNext.next;
             }
             return null;
+        }
+    }
+
+    /**给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。*/
+    public static class Solution10{
+        public ListNode EntryNodeOfLoop(ListNode pHead){
+            if(pHead == null || pHead.next == null){
+                return null;
+            }
+
+            ListNode fast = pHead;
+            ListNode slow = pHead;
+
+            while(fast != null && fast.next != null){
+                fast = fast.next.next;
+                slow = slow.next;
+                if(fast == slow){
+                    ListNode slow2 = pHead;
+                    while(slow2 != slow){
+                        slow2 = slow2.next;
+                        slow = slow.next;
+                    }
+                    return slow2;
+                }
+            }
+            return null;
+
+        }
+    }
+
+    /**请实现一个函数用来找出字符流中第一个只出现一次的字符。例如，当从字符流中只读出前两个字符"go"时，第一个只出现一次的字符是"g"。
+     * 当从该字符流中读出前六个字符“google"时，第一个只出现一次的字符是"l"。*/
+    public static class Solution11{
+        Queue<Character> q=new LinkedList<Character>();
+        HashMap<Character,Integer> hm=new HashMap<Character,Integer>();
+        //Insert one char from stringstream
+        public void Insert(char ch){
+            if(hm.containsKey(ch)){
+                int val=hm.get(ch)+1;
+                hm.put(ch,val);
+            }else{
+                hm.put(ch,1);
+                q.offer(ch);
+            }
+        }
+        //return the first appearence once char in current stringstream
+        public char FirstAppearingOnce(){
+            while(!q.isEmpty()){
+                if(hm.get(q.peek())>1){
+                    q.poll();
+                }else{
+                    return q.peek();
+                }
+            }
+            return '#';
         }
     }
 }

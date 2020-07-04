@@ -1,16 +1,9 @@
 import java.util.*;
-
+import java.util.regex.Pattern;
 public class LeetCode {
     public static void main(String[] args){
-        Solution11 s=new Solution11();
-        s.Insert('g');
-        s.Insert('o');
-        s.Insert('o');
-        s.Insert('g');
-        s.Insert('l');
-        System.out.println(s.q);
-        System.out.println(s.hm);
-        System.out.println(s.FirstAppearingOnce());
+        Solution12 s=new Solution12();
+        System.out.println(s.isNumeric("322acda"));
     }
     /*寻找两数之和（两遍哈希表）*/
     //给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
@@ -454,6 +447,40 @@ public class LeetCode {
                 }
             }
             return '#';
+        }
+    }
+
+    /***请实现一个函数用来判断字符串是否表示数值（包括整数和小数）。
+     * 例如，字符串"+100","5e2","-123","3.1416"和"-1E-16"都表示数值。
+     * 但是"12e","1a3.14","1.2.3","+-5"和"12e+4.3"都不是。
+     */
+
+    public static class Solution12 {
+        public static boolean isNumeric(String str) {
+            String pattern = "^[-+]?\\d*(?:\\.\\d*)?(?:[eE][+\\-]?\\d+)?$";
+            String pa="^[-+]?\\d*(\\.\\d*)?[A-z]*$";
+            String s = new String(str);
+            return Pattern.matches(pattern,s);//Pattern.matches(pattern,s);
+        }
+    }
+
+    /**地上有一个m行和n列的方格。一个机器人从坐标0,0的格子开始移动，每一次只能向左，右，上，下四个方向移动一格，
+     * 但是不能进入行坐标和列坐标的数位之和大于k的格子。
+     * 例如，当k为18时，机器人能够进入方格（35,37），因为3+5+3+7 = 18。
+     * 但是，它不能进入方格（35,38），因为3+5+3+8 = 19。请问该机器人能够达到多少个格子？*/
+    public static class HSolution0{
+        void dfs(int[][] flag,int x,int y,int cnt){
+            if(flag[x][y]==0){
+                flag[x][y]++;
+                cnt++;
+            }
+
+        }
+        public int movingCount(int threshold, int rows, int cols){
+            if(threshold<=0){
+                return 0;
+            }
+
         }
     }
 }

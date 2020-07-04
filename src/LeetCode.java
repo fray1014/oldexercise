@@ -469,19 +469,96 @@ public class LeetCode {
      * 例如，当k为18时，机器人能够进入方格（35,37），因为3+5+3+7 = 18。
      * 但是，它不能进入方格（35,38），因为3+5+3+8 = 19。请问该机器人能够达到多少个格子？*/
     public static class HSolution0{
-        void dfs(int[][] flag,int x,int y,int cnt){
-            if(flag[x][y]==0){
-                flag[x][y]++;
-                cnt++;
-            }
-
-        }
-        public int movingCount(int threshold, int rows, int cols){
-            if(threshold<=0){
+        public int movingCount(int threshold, int rows, int cols) {
+            if (rows <= 0 || cols <= 0 || threshold < 0)
                 return 0;
-            }
 
+            boolean[][] isVisited = new boolean[rows][cols];//标记
+            int count = movingCountCore(threshold, rows, cols, 0, 0, isVisited);
+            return count;
         }
+
+        private int movingCountCore(int threshold,int rows,int cols,
+                                    int row,int col, boolean[][] isVisited) {
+            if (row < 0 || col < 0 || row >= rows || col >= cols || isVisited[row][col]
+                    || cal(row) + cal(col) > threshold)
+                return 0;
+            isVisited[row][col] = true;
+            return 1 + movingCountCore(threshold, rows, cols, row - 1, col, isVisited)
+                    + movingCountCore(threshold, rows, cols, row + 1, col, isVisited)
+                    + movingCountCore(threshold, rows, cols, row, col - 1, isVisited)
+                    + movingCountCore(threshold, rows, cols, row, col + 1, isVisited);
+        }
+
+        private int cal(int num) {
+            int sum = 0;
+            while (num > 0) {
+                sum += num % 10;
+                num /= 10;
+            }
+            return sum;
+        }
+    }
+
+    public static class HSolution1{
+        boolean[] visited = null;
+        public boolean hasPath(char[] matrix, int rows, int cols, char[] str) {
+            visited = new boolean[matrix.length];
+            for(int i = 0; i < rows; i++)
+                for(int j = 0; j < cols; j++)
+                    if(subHasPath(matrix,rows,cols,str,i,j,0))
+                        return true;
+            return false;
+        }
+
+        public boolean subHasPath(char[] matrix, int rows, int cols, char[] str, int row, int col, int len){
+            if(matrix[row*cols+col] != str[len]|| visited[row*cols+col] == true) return false;
+            if(len == str.length-1) return true;
+            visited[row*cols+col] = true;
+            if(row > 0 && subHasPath(matrix,rows,cols,str,row-1,col,len+1)) return true;
+            if(row < rows-1 && subHasPath(matrix,rows,cols,str,row+1,col,len+1)) return true;
+            if(col > 0 && subHasPath(matrix,rows,cols,str,row,col-1,len+1)) return true;
+            if(col < cols-1 && subHasPath(matrix,rows,cols,str,row,col+1,len+1)) return true;
+            visited[row*cols+col] = false;
+            return false;
+        }
+
+        /*public int[][] visit;
+        public boolean hasPath(char[] matrix, int rows, int cols, char[] str) {
+            visit = new int[rows][cols];
+            char[][] array = new char[rows][cols];
+            for (int i = 0; i < rows ; i++) {
+                for(int j = 0; j < cols; j++) {
+                    array[i][j] = matrix[i*cols + j];
+                }
+            }
+            for (int i = 0; i < rows ; i++) {
+                for(int j = 0; j < cols; j++) {
+                    if(find(array,rows,cols,str,i,j,0)){
+                        return  true;
+                    }
+                }
+            }
+            return false;
+        }
+        public boolean find(char[][] array, int rows, int cols, char[] str, int rpos,int cpos, int spos) {
+
+            if(spos >= str.length) {
+                return  true;
+            }
+            if(rpos < 0 || cpos < 0 || rpos >= rows || cpos >= cols || array[rpos][cpos] != str[spos] || visit[rpos][cpos] == 1) {
+
+                return false;
+            }
+            visit[rpos][cpos] = 1;
+            boolean isSunc =  find( array,   rows,  cols, str,  rpos+1, cpos, spos+1)
+                    || find( array,   rows,  cols, str,  rpos , cpos+1, spos+1)
+                    || find( array,   rows,  cols, str,  rpos-1, cpos, spos+1)
+                    || find( array,   rows,  cols, str,  rpos , cpos-1, spos+1);
+            visit[rpos][cpos] = 0;
+            return isSunc;
+        }*/
+
     }
 }
 

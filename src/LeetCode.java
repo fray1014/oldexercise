@@ -2,8 +2,9 @@ import java.util.*;
 import java.util.regex.Pattern;
 public class LeetCode {
     public static void main(String[] args){
-        Solution12 s=new Solution12();
-        System.out.println(s.isNumeric("322acda"));
+        SolutionJZ64 s=new SolutionJZ64();
+        int[] a={2,3,4,2,6,2,5,1};
+        System.out.println(s.maxInWindows(a,3));
     }
     /*寻找两数之和（两遍哈希表）*/
     //给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
@@ -160,7 +161,7 @@ public class LeetCode {
     /**
      * 给定一个数组A[0,1,...,n-1],请构建一个数组B[0,1,...,n-1],其中B中的元素B[i]=A[0]*A[1]*...*A[i-1]*A[i+1]*...*A[n-1]。
      * 不能使用除法。（注意：规定B[0] = A[1] * A[2] * ... * A[n-1]，B[n-1] = A[0] * A[1] * ... * A[n-2];）*/
-    public static class Solution1{
+    public static class SolutionJZ51{
         public static int[] multiply(int[] A){
             int[] B=new int[A.length];
             B[0]=1;
@@ -179,7 +180,7 @@ public class LeetCode {
     /**
      * 写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。
      */
-    public static class Solution2{
+    public static class SolutionJZ48{
         public static int Add(int num1,int num2) {
             while(num2!=0){
                 int tmp=(num1 & num2)<<1;
@@ -203,7 +204,7 @@ public class LeetCode {
         }
     }
 
-    public static class Solution3 {
+    public static class SolutionJZ38 {
         public static int TreeDepth(TreeNode root) {
             if(root==null) {
                 return 0;
@@ -216,7 +217,7 @@ public class LeetCode {
 
     /**
      * 用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。*/
-    public static class Solution4{
+    public static class SolutionJZ5{
         Stack<Integer> stack1 = new Stack<Integer>();
         Stack<Integer> stack2 = new Stack<Integer>();
 
@@ -241,7 +242,7 @@ public class LeetCode {
      * 给你一根长度为n的绳子，请把绳子剪成整数长的m段（m、n都是整数，n>1并且m>1，m<=n），
      * 每段绳子的长度记为k[1],...,k[m]。请问k[1]x...xk[m]可能的最大乘积是多少？
      * 例如，当绳子的长度是8时，我们把它剪成长度分别为2、3、3的三段，此时得到的最大乘积是18。*/
-    public static class Solution5{
+    public static class SolutionJZ67{
         public int cutRope(int target) {
            if(target<=0) return 0;
                 if(target==1 || target == 2) return 1;
@@ -261,7 +262,7 @@ public class LeetCode {
 
     /**
      * 得到一个数据流中的中位数*/
-    public static class Solution6{
+    public static class SolutionJZ63{
         //小顶堆，用该堆记录位于中位数后面的部分
         private PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();
 
@@ -308,7 +309,7 @@ public class LeetCode {
 
     /**
      * 二叉树镜像*/
-    public static class Solution7{
+    public static class SolutionJZ18{
         public void Mirror(TreeNode root) {
             if(root==null) {
                 return;
@@ -322,8 +323,21 @@ public class LeetCode {
         }
     }
 
+    /**一只青蛙一次可以跳上1级台阶，也可以跳上2级……它也可以跳上n级。
+     * 求该青蛙跳上一个n级的台阶总共有多少种跳法。*/
+    public static class SolutionJZ9{
+        public int JumpFloorII(int target) {
+            if(target==0||target==1) return 1;
+            int sum=1;
+            for(int i=2;i<=target;i++){
+                sum<<=1;
+            }
+            return sum;
+        }
+    }
+
     /**从上到下按层打印二叉树，同一层结点从左至右输出。每一层输出一行*/
-    public static class Solution8 {
+    public static class SolutionJZ60 {
         ArrayList<ArrayList<Integer> > Print(TreeNode pRoot) {
             ArrayList<ArrayList<Integer>> thelist = new ArrayList<ArrayList<Integer>>();
             if(pRoot==null)return thelist; //这里要求返回thelist而不是null
@@ -368,7 +382,7 @@ public class LeetCode {
         }
     }
 
-    public static class Solution9 {
+    public static class SolutionJZ57 {
 
         public TreeLinkNode GetNext(TreeLinkNode pNode) {
             // 1.
@@ -396,7 +410,7 @@ public class LeetCode {
     }
 
     /**给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。*/
-    public static class Solution10{
+    public static class SolutionJZ55{
         public ListNode EntryNodeOfLoop(ListNode pHead){
             if(pHead == null || pHead.next == null){
                 return null;
@@ -424,7 +438,7 @@ public class LeetCode {
 
     /**请实现一个函数用来找出字符流中第一个只出现一次的字符。例如，当从字符流中只读出前两个字符"go"时，第一个只出现一次的字符是"g"。
      * 当从该字符流中读出前六个字符“google"时，第一个只出现一次的字符是"l"。*/
-    public static class Solution11{
+    public static class SolutionJZ54{
         Queue<Character> q=new LinkedList<Character>();
         HashMap<Character,Integer> hm=new HashMap<Character,Integer>();
         //Insert one char from stringstream
@@ -455,7 +469,7 @@ public class LeetCode {
      * 但是"12e","1a3.14","1.2.3","+-5"和"12e+4.3"都不是。
      */
 
-    public static class Solution12 {
+    public static class SolutionJZ53 {
         public static boolean isNumeric(String str) {
             String pattern = "^[-+]?\\d*(?:\\.\\d*)?(?:[eE][+\\-]?\\d+)?$";
             String pa="^[-+]?\\d*(\\.\\d*)?[A-z]*$";
@@ -468,7 +482,7 @@ public class LeetCode {
      * 但是不能进入行坐标和列坐标的数位之和大于k的格子。
      * 例如，当k为18时，机器人能够进入方格（35,37），因为3+5+3+7 = 18。
      * 但是，它不能进入方格（35,38），因为3+5+3+8 = 19。请问该机器人能够达到多少个格子？*/
-    public static class HSolution0{
+    public static class SolutionJZ66{
         public int movingCount(int threshold, int rows, int cols) {
             if (rows <= 0 || cols <= 0 || threshold < 0)
                 return 0;
@@ -499,8 +513,9 @@ public class LeetCode {
             return sum;
         }
     }
-
-    public static class HSolution1{
+    /**请设计一个函数，用来判断在一个矩阵中是否存在一条包含某字符串所有字符的路径。
+     * 路径可以从矩阵中的任意一个格子开始，每一步可以在矩阵中向左，向右，向上，向下移动一个格子。*/
+    public static class SolutionJZ65{
         boolean[] visited = null;
         public boolean hasPath(char[] matrix, int rows, int cols, char[] str) {
             visited = new boolean[matrix.length];
@@ -559,6 +574,39 @@ public class LeetCode {
             return isSunc;
         }*/
 
+    }
+
+    public static class SolutionJZ64{
+        public ArrayList<Integer> maxInWindows(int [] num, int size){
+            ArrayList<Integer> max=new ArrayList<Integer>();
+            if(num.length==0) {
+                return max;
+            }
+            if(size>=num.length){
+                max.add(getMax(num));
+                return max;
+            }
+            for(int i=0;i<num.length-size+1;i++){
+                int[] tmp=getArray(num,size,i);
+                max.add(getMax(tmp));
+            }
+            return max;
+        }
+        public int[] getArray(int[] a,int size,int index){
+            int[] b=new int[size];
+            for(int i=0;i<size;i++){
+                b[i]=a[index+i];
+            }
+            return b;
+        }
+        public int getMax(int[] a){
+            int max=a[0];
+            for(int i=1;i<a.length;i++){
+                if(a[i]>max)
+                    max=a[i];
+            }
+            return max;
+        }
     }
 }
 

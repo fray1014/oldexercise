@@ -576,14 +576,11 @@ public class LeetCode {
 
     }
 
+    /**给定一个数组和滑动窗口的大小，找出所有滑动窗口里数值的最大值*/
     public static class SolutionJZ64{
         public ArrayList<Integer> maxInWindows(int [] num, int size){
             ArrayList<Integer> max=new ArrayList<Integer>();
-            if(num.length==0) {
-                return max;
-            }
-            if(size>=num.length){
-                max.add(getMax(num));
+            if(num.length==0 || size<1 || size>num.length) {
                 return max;
             }
             for(int i=0;i<num.length-size+1;i++){

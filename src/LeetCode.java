@@ -605,6 +605,9 @@ public class LeetCode {
             return max;
         }
     }
+
+    /**序列化和反序列化二叉树*/
+    public static class SolutionJZ61
 }
 
 

@@ -2,9 +2,25 @@ import java.util.*;
 import java.util.regex.Pattern;
 public class LeetCode {
     public static void main(String[] args){
-        SolutionJZ64 s=new SolutionJZ64();
-        int[] a={2,3,4,2,6,2,5,1};
-        System.out.println(s.maxInWindows(a,3));
+        TreeNode treeNode1 = new TreeNode(1);
+        TreeNode treeNode2 = new TreeNode(2);
+        TreeNode treeNode3 = new TreeNode(3);
+        TreeNode treeNode4 = new TreeNode(4);
+        TreeNode treeNode5 = new TreeNode(5);
+        TreeNode treeNode6 = new TreeNode(6);
+
+        treeNode1.left = treeNode2;
+        treeNode1.right = treeNode3;
+
+        treeNode2.left = treeNode4;
+        treeNode3.left = treeNode5;
+        treeNode3.right = treeNode6;
+
+        SolutionJZ61 serializeTree = new SolutionJZ61();
+
+        String str = serializeTree.Serialize(treeNode1);
+        TreeNode treeNode = serializeTree.Deserialize(str);
+        System.out.println(str);
     }
     /*寻找两数之和（两遍哈希表）*/
     //给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
@@ -194,7 +210,7 @@ public class LeetCode {
     /**
      * 输入二叉树求深度
      */
-    public class TreeNode {
+    public static class TreeNode {
         int val = 0;
         TreeNode left = null;
         TreeNode right = null;
@@ -606,10 +622,87 @@ public class LeetCode {
         }
     }
 
-<<<<<<< HEAD
     /**序列化和反序列化二叉树*/
-    public static class SolutionJZ61
-=======
+    public static class SolutionJZ61{
+        /*
+        String Serialize(TreeNode root) {
+            if (root == null) return "";
+            return helpSerialize(root, new StringBuilder()).toString();
+        }
+
+        private StringBuilder helpSerialize(TreeNode root, StringBuilder s) {
+            if (root == null) return s;
+            s.append(root.val).append("!");
+            if (root.left != null) {
+                helpSerialize(root.left, s);
+            } else {
+                s.append("#!"); // 为null的话直接添加即可
+            }
+            if (root.right != null) {
+                helpSerialize(root.right, s);
+            } else {
+                s.append("#!");
+            }
+            return s;
+        }
+        private int index = 0; // 设置全局主要是遇到了#号的时候需要直接前进并返回null
+
+        TreeNode Deserialize(String str) {
+            if (str == null || str.length() == 0) return null;
+            String[] split = str.split("!");
+            return helpDeserialize(split);
+        }
+
+        private TreeNode helpDeserialize(String[] strings) {
+            if (strings[index].equals("#")) {
+                index++;// 数据前进
+                return null;
+            }
+            // 当前值作为节点已经被用
+            TreeNode root = new TreeNode(Integer.parseInt(strings[index]));
+            index++; // index++到达下一个需要反序列化的值
+            root.left = helpDeserialize(strings);
+            root.right = helpDeserialize(strings);
+            return root;
+        }*/
+
+        int index = -1;
+        /**
+         * 分别遍历左节点和右节点，空使用#代替，节点之间，隔开
+         *
+         * @param root
+         * @return
+         */
+        public String Serialize(TreeNode root) {
+            if (root == null) {
+                return "#";
+            } else {
+                return root.val + "," + Serialize(root.left) + "," + Serialize(root.right);
+            }
+        }
+        /**
+         * 使用index来设置树节点的val值，递归遍历左节点和右节点，如果值是#则表示是空节点，直接返回
+         *
+         * @param str
+         * @return
+         */
+        TreeNode Deserialize(String str) {
+            String[] s = str.split(",");//将序列化之后的序列用，分隔符转化为数组
+            index++;//索引每次加一
+            int len = s.length;
+            if (index > len) {
+                return null;
+            }
+            TreeNode treeNode = null;
+            if (!s[index].equals("#")) {//不是叶子节点 继续走 是叶子节点出递归
+                treeNode = new TreeNode(Integer.parseInt(s[index]));
+                treeNode.left = Deserialize(str);
+                treeNode.right = Deserialize(str);
+            }
+            return treeNode;
+        }
+    }
+
     /**
      * 给定一棵二叉搜索树，请找出其中的第k小的结点。
      * 例如（5，3，7，2，4，6，8）中，按结点数值大小顺序第三小结点的值为4。*/
@@ -631,7 +724,6 @@ public class LeetCode {
             }
         }
     }
->>>>>>> 4cb680c9f94019409f7130c367120e0e8c983020
 }
 
 

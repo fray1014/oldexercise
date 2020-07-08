@@ -606,8 +606,32 @@ public class LeetCode {
         }
     }
 
+<<<<<<< HEAD
     /**序列化和反序列化二叉树*/
     public static class SolutionJZ61
+=======
+    /**
+     * 给定一棵二叉搜索树，请找出其中的第k小的结点。
+     * 例如（5，3，7，2，4，6，8）中，按结点数值大小顺序第三小结点的值为4。*/
+    public static class SolutionJZ62{
+        ArrayList<TreeNode> list = new ArrayList<>();
+        TreeNode KthNode(TreeNode pRoot, int k){
+            addNote(pRoot);
+            if(k>=1&&list.size()>=k){
+                return list.get(k-1);
+            }
+            return null;
+        }
+        //中序遍历
+        void addNote(TreeNode cur){
+            if(cur!=null){
+                addNote(cur.left);
+                list.add(cur);
+                addNote(cur.right);
+            }
+        }
+    }
+>>>>>>> 4cb680c9f94019409f7130c367120e0e8c983020
 }
 
 

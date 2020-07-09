@@ -15,12 +15,8 @@ public class LeetCode {
         treeNode2.left = treeNode4;
         treeNode3.left = treeNode5;
         treeNode3.right = treeNode6;
-
-        SolutionJZ61 serializeTree = new SolutionJZ61();
-
-        String str = serializeTree.Serialize(treeNode1);
-        TreeNode treeNode = serializeTree.Deserialize(str);
-        System.out.println(str);
+        SolutionJZ59 so=new SolutionJZ59();
+        System.out.println(so.Print(treeNode1));
     }
     /*寻找两数之和（两遍哈希表）*/
     //给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
@@ -41,7 +37,7 @@ public class LeetCode {
     //给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，
     // 并且它们的每个节点只能存储 一位 数字。
     //如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。
-    public class ListNode{
+    public static class ListNode{
         int val;
         ListNode next=null;
         ListNode(int x){val=x;}
@@ -722,6 +718,103 @@ public class LeetCode {
                 list.add(cur);
                 addNote(cur.right);
             }
+        }
+    }
+
+    /**请实现一个函数按照之字形打印二叉树，即第一行按照从左到右的顺序打印，第二层按照从右至左的顺序打印，
+     * 第三行按照从左到右的顺序打印，其他行以此类推。*/
+    public static class SolutionJZ59{
+        public ArrayList<ArrayList<Integer> > Print(TreeNode pRoot) {
+            int cnt=1;
+            ArrayList<ArrayList<Integer>> thelist = new ArrayList<ArrayList<Integer>>();
+            if(pRoot==null)return thelist; //这里要求返回thelist而不是null
+            //奇数行
+            Stack<TreeNode> q=new Stack<>();
+            //偶数行
+            Stack<TreeNode> st=new Stack<>();
+            q.push(pRoot);
+            while(!q.isEmpty()||!st.isEmpty()){
+                ArrayList<Integer> list=new ArrayList<Integer>();
+                if(cnt%2==1){
+                    int s=q.size();
+                    for(int i=0;i<s;i++){
+                        TreeNode tmp=q.pop();
+                        list.add(tmp.val);
+                        if(tmp.left!=null)
+                            st.push(tmp.left);
+                        if(tmp.right!=null)
+                            st.push(tmp.right);
+                    }
+                }else{
+                    int s=st.size();
+                    for(int i=0;i<s;i++){
+                        TreeNode tmp=st.pop();
+                        list.add(tmp.val);
+                        if(tmp.right!=null)
+                            q.push(tmp.right);
+                        if(tmp.left!=null)
+                            q.push(tmp.left);
+                    }
+                }
+
+                cnt++;
+                thelist.add(list);
+            }
+            return thelist;
+        }
+    }
+
+    /**请实现一个函数，用来判断一棵二叉树是不是对称的。
+     * 注意，如果一个二叉树同此二叉树的镜像是同样的，定义其为对称的。*/
+    public static class SolutionJZ58{
+        boolean isSymmetrical(TreeNode pRoot){
+            return pRoot==null||jude(pRoot.left,pRoot.right);
+        }
+
+        public boolean jude(TreeNode node1, TreeNode node2) {
+            if (node1 == null && node2 == null) {
+                return true;
+            } else if (node1 == null || node2 == null) {
+                return false;
+            }
+
+            if (node1.val != node2.val) {
+                return false;
+            } else {
+                return jude(node1.left, node2.right) && jude(node1.right, node2.left);
+            }
+        }
+    }
+
+    /**在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。
+     * 例如，链表1->2->3->3->4->4->5 处理后为 1->2->5*/
+    public static class SolutionJZ56{
+        public ListNode deleteDuplication(ListNode pHead){
+            if(pHead == null || pHead.next == null){
+                return pHead;
+            }
+            // 自己构建辅助头结点
+            ListNode head=new ListNode(Integer.MIN_VALUE);
+            head.next = pHead;
+            ListNode pre = head;
+            ListNode cur = head.next;
+            while(cur!=null){
+                if(cur.next != null && cur.next.val == cur.val){
+                    // 相同结点一直前进
+                    while(cur.next != null && cur.next.val == cur.val){
+                        cur = cur.next;
+                    }
+                    // 退出循环时，cur 指向重复值，也需要删除，而 cur.next 指向第一个不重复的值
+                    // cur 继续前进
+                    cur = cur.next;
+                    // pre 连接新结点
+                    pre.next = cur;
+                }else{
+                    pre = cur;
+                    cur = cur.next;
+                }
+            }
+            return head.next;
         }
     }
 }

@@ -2,21 +2,10 @@ import java.util.*;
 import java.util.regex.Pattern;
 public class LeetCode {
     public static void main(String[] args){
-        TreeNode treeNode1 = new TreeNode(1);
-        TreeNode treeNode2 = new TreeNode(2);
-        TreeNode treeNode3 = new TreeNode(3);
-        TreeNode treeNode4 = new TreeNode(4);
-        TreeNode treeNode5 = new TreeNode(5);
-        TreeNode treeNode6 = new TreeNode(6);
-
-        treeNode1.left = treeNode2;
-        treeNode1.right = treeNode3;
-
-        treeNode2.left = treeNode4;
-        treeNode3.left = treeNode5;
-        treeNode3.right = treeNode6;
-        SolutionJZ59 so=new SolutionJZ59();
-        System.out.println(so.Print(treeNode1));
+        char[] str={'a','b','c','1'};
+        char[] patt={'.','*'};
+        SolutionJZ52 s=new SolutionJZ52();
+        System.out.println(s.match(str,patt));
     }
     /*寻找两数之和（两遍哈希表）*/
     //给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
@@ -815,6 +804,67 @@ public class LeetCode {
                 }
             }
             return head.next;
+        }
+    }
+
+    /**在一个长度为n的数组里的所有数字都在0到n-1的范围内。 数组中某些数字是重复的，但不知道有几个数字是重复的。
+     * 也不知道每个数字重复几次。请找出数组中任意一个重复的数字。
+     * 例如，如果输入长度为7的数组{2,3,1,0,2,5,3}，那么对应的输出是第一个重复的数字2。*/
+    public static class SolutionJZ50{
+        public boolean duplicate(int numbers[], int length, int [] duplication) {
+            if (numbers == null || length == 0) {
+                return false;
+            }
+            for (int i = 0; i < length; i++) {
+                while (numbers[i] != i) {
+                    if (numbers[i] == numbers[numbers[i]]) {
+                        duplication[0] = numbers[i];
+                        return true;
+                    }
+                    else {
+                        int temp = numbers[i];
+                        numbers[i] = numbers[temp];
+                        numbers[temp] = temp;
+                    }
+                }
+            }
+            return false;
+        }
+    }
+
+    /**请实现一个函数用来匹配包括'.'和'*'的正则表达式。模式中的字符'.'表示任意一个字符，
+     * 而'*'表示它前面的字符可以出现任意次（包含0次）。
+     * 在本题中，匹配是指字符串的所有字符匹配整个模式。
+     * 例如，字符串"aaa"与模式"a.a"和"ab*ac*a"匹配，但是与"aa.a"和"ab*a"均不匹配*/
+    public static class SolutionJZ52{
+        public boolean matchStr(char[] str, int i, char[] pattern, int j) {
+
+            // 边界
+            if (i == str.length && j == pattern.length) { // 字符串和模式串都为空
+                return true;
+            } else if (j == pattern.length) { // 模式串为空
+                return false;
+            }
+
+            boolean flag = false;
+            boolean next = (j + 1 < pattern.length && pattern[j + 1] == '*'); // 模式串下一个字符是'*'
+            if (next) {
+                if (i < str.length && (pattern[j] == '.' || str[i] == pattern[j])) { // 要保证i<str.length，否则越界
+                    return matchStr(str, i, pattern, j + 2) || matchStr(str, i + 1, pattern, j);
+                } else {
+                    return matchStr(str, i, pattern, j + 2);
+                }
+            } else {
+                if (i < str.length && (pattern[j] == '.' || str[i] == pattern[j])) {
+                    return matchStr(str, i + 1, pattern, j + 1);
+                } else {
+                    return false;
+                }
+            }
+        }
+
+        public boolean match(char[] str, char[] pattern) {
+            return matchStr(str, 0, pattern, 0);
         }
     }
 }

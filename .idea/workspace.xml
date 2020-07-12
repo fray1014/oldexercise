@@ -24,6 +24,35 @@
   <component name="ChangeListManager">
     <list default="true" id="29de76b7-f76c-4d5b-80c8-dca019c6a30f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$ListNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$ListNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$Solution0.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$Solution0.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ18.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ18.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ38.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ38.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ48.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ48.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ50.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ50.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ51.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ51.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ52.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ52.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ53.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ53.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ54.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ54.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ55.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ55.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ56.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ56.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ57.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ57.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ58.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ58.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ59.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ59.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ60.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ60.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ61.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ61.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ62.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ62.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ63$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ63$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ63.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ63.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ64.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ64.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ65.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ65.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ66.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ66.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ67.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ67.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$TreeLinkNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$TreeLinkNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$TreeNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$TreeNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LeetCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LeetCode.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -41,12 +70,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/LeetCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="693">
-              <caret line="863" column="9" lean-forward="true" selection-start-line="863" selection-start-column="9" selection-end-line="863" selection-end-column="9" />
-              <folding>
-                <element signature="e#28635#28636#0" expanded="true" />
-                <element signature="e#28694#28695#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-18326">
+              <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -83,6 +108,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -100,7 +126,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -157,7 +182,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26066098" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -166,7 +191,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32917467" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22264875" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39923224" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -174,7 +199,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32917467" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32821497" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -258,12 +283,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/LeetCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="863" column="9" lean-forward="true" selection-start-line="863" selection-start-column="9" selection-end-line="863" selection-end-column="9" />
-          <folding>
-            <element signature="e#28635#28636#0" expanded="true" />
-            <element signature="e#28694#28695#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-18326">
+          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
         </state>
       </provider>
     </entry>

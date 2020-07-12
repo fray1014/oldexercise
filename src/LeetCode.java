@@ -2,10 +2,10 @@ import java.util.*;
 import java.util.regex.Pattern;
 public class LeetCode {
     public static void main(String[] args){
-        char[] str={'a','b','c','1'};
-        char[] patt={'.','*'};
-        SolutionJZ52 s=new SolutionJZ52();
-        System.out.println(s.match(str,patt));
+        String str="student. a am I";
+        String str2="";
+        System.out.println(SolutionJZ44.ReverseSentence(str));
+        System.out.println("               ".trim());
     }
     /*寻找两数之和（两遍哈希表）*/
     //给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
@@ -865,6 +865,167 @@ public class LeetCode {
 
         public boolean match(char[] str, char[] pattern) {
             return matchStr(str, 0, pattern, 0);
+        }
+    }
+
+    /**将一个字符串转换成一个整数，要求不能使用字符串转换整数的库函数。
+     * 数值为0或者字符串不是一个合法的数值则返回0*/
+    public static class SolutionJZ49{
+
+        public static int StrToInt(String str) {
+            /*偷懒解法，异常捕获
+            Integer res=0;
+            try {
+                res = new Integer(str);
+            } catch (NumberFormatException e) {
+
+            } finally {
+                return res;
+            }
+        }*/
+
+            //最优解
+            if(str == null || "".equals(str.trim()))return 0;
+            str = str.trim();
+            char[] arr = str.toCharArray();
+            int i = 0;
+            int flag = 1;
+            int res = 0;
+            if(arr[i] == '-'){
+                flag = -1;
+            }
+            if( arr[i] == '+' || arr[i] == '-'){
+                i++;
+            }
+            while(i<arr.length ){
+                //是数字
+                if(isNum(arr[i])){
+                    int cur = arr[i] - '0';
+                    if(flag == 1 && (res > Integer.MAX_VALUE/10 || res == Integer.MAX_VALUE/10 && cur >7)){
+                        return 0;
+                    }
+                    if(flag == -1 && (res > Integer.MAX_VALUE/10 || res == Integer.MAX_VALUE/10 && cur >8)){
+                        return 0;
+                    }
+                    res = res*10 +cur;
+                    i++;
+                }else{
+                    //不是数字
+                    return 0;
+                }
+            }
+            return res*flag;
+        }
+        public static boolean isNum(char c){
+            return c>='0'&& c<='9';
+        }
+    }
+
+    /**求1+2+3+...+n，要求不能使用乘除法、for、while、if、else、switch、case等关键字及条件判断语句（A?B:C）。*/
+    public static class SolutionJZ47{
+        int sum=0;
+        public int Sum_Solution(int n) {
+            //递归法
+            /*
+            int sum=n;
+            boolean ans = (n>0)&&((sum+=Sum_Solution(n-1))>0);
+            return sum;*/
+            //公式法
+            int a=n+(int)Math.pow(n,2);
+            return a>>1;
+        }
+    }
+
+    /**每年六一儿童节,牛客都会准备一些小礼物去看望孤儿院的小朋友,今年亦是如此。
+     * HF作为牛客的资深元老,自然也准备了一些小游戏。其中,有个游戏是这样的:
+     * 首先,让小朋友们围成一个大圈。然后,他随机指定一个数m,让编号为0的小朋友开始报数。
+     * 每次喊到m-1的那个小朋友要出列唱首歌,然后可以在礼品箱中任意的挑选礼物,并且不再回到圈中,
+     * 从他的下一个小朋友开始,继续0...m-1报数....这样下去....直到剩下最后一个小朋友,可以不用表演,
+     * 并且拿到牛客名贵的“名侦探柯南”典藏版(名额有限哦!!^_^)。
+     * 请你试着想下,哪个小朋友会得到这份礼品呢？(注：小朋友的编号是从0到n-1)
+
+     如果没有小朋友，请返回-1*/
+    public static class SolutionJZ46{
+        public int LastRemaining_Solution(int n, int m) {
+            //1.链表模拟，时间复杂度O(N^2)，空间复杂度O(N)
+            /*
+            if(n<1)
+                return -1;
+            else{
+                LinkedList<Integer> l=new LinkedList<>();
+                for(int i=0;i<n;i++){
+                    l.offer(i);
+                }
+                int index=0;
+                while(n>1){
+                    index=(index+m-1)%n;
+                    l.remove(index);
+                    n--;
+                }
+                return l.peek();
+            }*/
+            //2.迭代
+            if (n <= 0) return -1;
+            int index = 0;
+            for (int i=2; i<=n; ++i) {
+                index = (index + m) % i;
+            }
+            return index;
+        }
+    }
+
+    /**LL今天心情特别好,因为他去买了一副扑克牌,发现里面居然有2个大王,2个小王(一副牌原本是54张^_^)...
+     * 他随机从中抽出了5张牌,想测测自己的手气,看看能不能抽到顺子,如果抽到的话,
+     * 他决定去买体育彩票,嘿嘿！！“红心A,黑桃3,小王,大王,方片5”,“Oh My God!”不是顺子.....LL不高兴了,
+     * 他想了想,决定大\小 王可以看成任何数字,并且A看作1,J为11,Q为12,K为13。
+     * 上面的5张牌就可以变成“1,2,3,4,5”(大小王分别看作2和4),“So Lucky!”。LL决定去买体育彩票啦。
+     * 现在,要求你使用这幅牌模拟上面的过程,然后告诉我们LL的运气如何， 如果牌能组成顺子就输出true，
+     * 否则就输出false。为了方便起见,你可以认为大小王是0。*/
+    public static class SolutionJZ45{
+        public boolean isContinuous(int [] numbers){
+            if(numbers.length!=5){
+                return false;
+            }else{
+                TreeSet<Integer> s=new TreeSet<>();
+                int cnt=0;
+                for(int i=0;i<numbers.length;i++){
+                    if(numbers[i]==0){
+                        cnt++;
+                    }else{
+                        s.add(numbers[i]);
+                    }
+                }
+                if(cnt+s.size()!=5){
+                    return false;
+                }else if(s.last()-s.first()<5){
+                    return true;
+                }
+                return false;
+            }
+        }
+    }
+
+    /**牛客最近来了一个新员工Fish，每天早晨总是会拿着一本英文杂志，写些句子在本子上。同事Cat对Fish写的内容颇感兴趣，
+     * 有一天他向Fish借来翻看，但却读不懂它的意思。例如，“student. a am I”。
+     * 后来才意识到，这家伙原来把句子单词的顺序翻转了，正确的句子应该是“I am a student.”。
+     * Cat对一一的翻转这些单词顺序可不在行，你能帮助他么？*/
+    public static class SolutionJZ44{
+        public static String ReverseSentence(String str){
+            if(str==null)
+                return str;
+            String[] s=str.split(" ");
+            if(s.length==0)
+                return str;
+            Stack<String> tmp=new Stack<>();
+            for(int i=0;i<s.length;i++){
+                tmp.push(s[i]);
+            }
+            String ret=new String();
+            while(!tmp.isEmpty()){
+                ret+=tmp.pop();
+                ret+=" ";
+            }
+            return ret.trim();
         }
     }
 }

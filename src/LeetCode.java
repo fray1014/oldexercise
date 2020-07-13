@@ -1028,6 +1028,61 @@ public class LeetCode {
             return ret.trim();
         }
     }
+
+    /**汇编语言中有一种移位指令叫做循环左移（ROL），现在有个简单的任务，就是用字符串模拟这个指令的运算结果。
+     * 对于一个给定的字符序列S，请你把其循环左移K位后的序列输出。
+     * 例如，字符序列S=”abcXYZdef”,要求输出循环左移3位后的结果，即“XYZdefabc”。是不是很简单？OK，搞定它！*/
+    public static class SolutionJZ43{
+        public String LeftRotateString(String str,int n){
+            //队列
+            /*
+            if(str==null || n<=0 || str.length()<n)
+                return str;
+            String ret=new String();
+            Queue<Character> q=new LinkedList<Character>();
+            char[] s=str.toCharArray();
+            for(int i=0;i<s.length;i++){
+                q.offer(s[i]);
+            }
+            for(int i=0;i<n;i++){
+                q.offer(q.poll());
+            }
+            for (Character c:q
+            ) {
+                ret+=c;
+            }
+            return ret;*/
+            if (str == null || n > str.length()) {
+                return str;
+            }
+            return str.substring(n) + str.substring(0, n);
+        }
+    }
+
+    /**输入一个递增排序的数组和一个数字S，在数组中查找两个数，使得他们的和正好是S，
+     * 如果有多对数字的和等于S，输出两个数的乘积最小的。*/
+    public static class SolutionJZ42{
+        public ArrayList<Integer> FindNumbersWithSum(int [] array,int sum) {
+            if(array.length==0)
+                return new ArrayList<Integer>();
+            int i=0;
+            ArrayList<Integer> a=new ArrayList<Integer>();
+            int j=array.length-1;
+            while(i<j){
+                if(array[i]+array[j]==sum){
+                    a.add(array[i]);
+                    a.add(array[j]);
+                    break;
+                }else if(array[i]+array[j]>sum){
+                    j--;
+                }else{
+                    i++;
+                }
+
+            }
+            return a;
+        }
+    }
 }
 
 

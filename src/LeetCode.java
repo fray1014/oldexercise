@@ -1083,6 +1083,94 @@ public class LeetCode {
             return a;
         }
     }
+
+    /**小明很喜欢数学,有一天他在做数学作业时,要求计算出9~16的和,他马上就写出了正确答案是100。
+     * 但是他并不满足于此,他在想究竟有多少种连续的正数序列的和为100(至少包括两个数)。
+     * 没多久,他就得到另一组连续正数和为100的序列:18,19,20,21,22。
+     * 现在把问题交给你,你能不能也很快的找出所有和为S的连续正数序列?*/
+    public static class SolutionJZ41{
+        public ArrayList<ArrayList<Integer> > FindContinuousSequence(int sum) {
+            ArrayList<ArrayList<Integer> > ret=new ArrayList<ArrayList<Integer> >();
+            int l=1,r=2;
+            int tmp=1;
+            while(l<=sum/2){
+                if(tmp<sum){
+                    tmp+=r;
+                    r++;
+                }else if(tmp>sum){
+                    tmp-=l;
+                    l++;
+                }else{
+                    ArrayList<Integer> a=new ArrayList<>();
+                    for(int i=l;i<r;i++){
+                        a.add(i);
+                    }
+                    ret.add(a);
+                    tmp-=l;
+                    l++;
+                }
+            }
+            return ret;
+        }
+    }
+
+    /**一个整型数组里除了两个数字之外，其他的数字都出现了两次。
+     * 请写程序找出这两个只出现一次的数字。*/
+    public static class SolutionJZ40{
+        public void FindNumsAppearOnce(int [] array,int num1[] , int num2[]) {
+            HashMap<Integer,Integer> h=new HashMap<>();
+            for (int i:array
+                 ) {
+                if(!h.containsKey(i)){
+                    h.put(i,1);
+                }else{
+                    h.put(i,2);
+                }
+            }
+            int cnt=0;
+            for (int i:array
+                 ) {
+                if(h.get(i)==1){
+                    if(cnt==0) {
+                        num1[0] = i;
+                        cnt++;
+                    }else{
+                        num2[0]=i;
+                    }
+                }
+            }
+        }
+    }
+
+    /**输入一棵二叉树，判断该二叉树是否是平衡二叉树。
+
+     在这里，我们只需要考虑其平衡性，不需要考虑其是不是排序二叉树*/
+    public static class SolutionJZ39{
+        public boolean IsBalanced_Solution(TreeNode root) {
+            if(root==null){
+                return true;
+            }
+            if(Math.abs(TreeDepth(root.left)-TreeDepth(root.right))>1){
+                return false;
+            }
+            return IsBalanced_Solution(root.left)&&IsBalanced_Solution(root.right);
+        }
+
+        public int TreeDepth(TreeNode root) {
+            if(root==null){
+                return 0;
+            }
+            if(root.left==null && root.right==null){
+                return 1;
+            }
+            return 1+Math.max(TreeDepth(root.left),TreeDepth(root.right));
+        }
+    }
+
+    /**统计一个数字在排序数组中出现的次数。*/
+    public static class SolutionJZ37{
+
+    }
 }
 
 

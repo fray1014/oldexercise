@@ -2,10 +2,8 @@ import java.util.*;
 import java.util.regex.Pattern;
 public class LeetCode {
     public static void main(String[] args){
-        String str="student. a am I";
-        String str2="";
-        System.out.println(SolutionJZ44.ReverseSentence(str));
-        System.out.println("               ".trim());
+        SolutionJZ35 s=new SolutionJZ35();
+
     }
     /*寻找两数之和（两遍哈希表）*/
     //给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
@@ -1169,7 +1167,113 @@ public class LeetCode {
 
     /**统计一个数字在排序数组中出现的次数。*/
     public static class SolutionJZ37{
+        public int GetNumberOfK(int [] array , int k) {
+            int index = Arrays.binarySearch(array, k);
+            if(index<0)return 0;
+            int cnt = 1;
+            for(int i=index+1; i < array.length && array[i]==k;i++)
+                cnt++;
+            for(int i=index-1; i >= 0 && array[i]==k;i--)
+                cnt++;
+            return cnt;
+            /*
+            if(array.length == 0 || k < array[0] || k > array[array.length-1]){
+                return 0;
+            }
+            int left = 0;
+            int right = array.length -1;
+            int count = 0;
+            int found = 0;
+            int mid = -1;
+            while(left < right){
+                mid = (left+right)/2;
+                if(array[mid] > k){
+                    right = mid-1;
+                }else if(array[mid] < k){
+                    left = mid+1;
+                }else{
+                    count++;
+                    found = mid;
+                    break;
+                }
+            }
 
+            int prev = mid-1;
+            int foll = mid+1;
+            while(prev >= left){
+                if(array[prev] == k){
+                    count++;
+                    prev--;
+                }else{
+                    break;
+                }
+            }
+
+            while(foll <= right){
+                if(array[foll] == k){
+                    count++;
+                    foll++;
+                }else{
+                    break;
+                }
+            }
+            return count;*/
+        }
+    }
+
+    /**找两个链表的第一个公共节点*/
+    public static class SolutionJZ36{
+        public ListNode FindFirstCommonNode(ListNode pHead1, ListNode pHead2) {
+            if(pHead1 == null || pHead2 == null)return null;
+            ListNode p1 = pHead1;
+            ListNode p2 = pHead2;
+            while(p1!=p2){
+                p1 = p1.next;
+                p2 = p2.next;
+                if(p1 != p2){
+                    if(p1 == null)p1 = pHead2;
+                    if(p2 == null)p2 = pHead1;
+                }
+            }
+            return p1;
+        }
+    }
+
+    /**找逆序对*/
+    public static class SolutionJZ35{
+        private int cnt;
+        private void MergeSort(int[] array, int start, int end){
+            if(start>=end)return;
+            int mid = (start+end)/2;
+            MergeSort(array, start, mid);
+            MergeSort(array, mid+1, end);
+            MergeOne(array, start, mid, end);
+        }
+        private void MergeOne(int[] array, int start, int mid, int end){
+            int[] temp = new int[end-start+1];
+            int k=0,i=start,j=mid+1;
+            while(i<=mid && j<= end){
+//如果前面的元素小于后面的不能构成逆序对
+                if(array[i] <= array[j])
+                    temp[k++] = array[i++];
+                else{
+//如果前面的元素大于后面的，那么在前面元素之后的元素都能和后面的元素构成逆序对
+                    temp[k++] = array[j++];
+                    cnt = (cnt + (mid-i+1))%1000000007;
+                }
+            }
+            while(i<= mid)
+                temp[k++] = array[i++];
+            while(j<=end)
+                temp[k++] = array[j++];
+            for(int l=0; l<k; l++){
+                array[start+l] = temp[l];
+            }
+        }
+        public int InversePairs(int [] array) {
+            MergeSort(array, 0, array.length-1);
+            return cnt;
+        }
     }
 }
 

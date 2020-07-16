@@ -1275,6 +1275,59 @@ public class LeetCode {
             return cnt;
         }
     }
+
+    /**第一个出现一次的字符串*/
+    public static class SolutionJZ34{
+        public int FirstNotRepeatingChar(String str) {
+
+            if(str==null)
+                return -1;
+
+            int[] cnt=new int[256];
+            for(int i=0;i<str.length();i++)
+                cnt[str.charAt(i)]++;
+            for(int i=0;i<str.length();i++){
+                if(cnt[str.charAt(i)]==1)
+                    return i;
+            }
+            return -1;
+            /*
+            HashMap<Character,Integer> hm=new HashMap<>();
+            for(int i=0;i<str.length();i++){
+                if(!hm.containsKey(str.charAt(i))){
+                    hm.put(str.charAt(i),1);
+                }else{
+                    int tmp=hm.get(str.charAt(i));
+                    hm.put(str.charAt(i),++tmp);
+                }
+            }
+            for(int i=0;i<str.length();i++){
+                if(hm.get(str.charAt(i))==1){
+                    return i;
+                }
+            }
+            return -1;*/
+        }
+    }
+
+    /**丑数
+     * 把只包含质因子2、3和5的数称作丑数（Ugly Number）。例如6、8都是丑数，但14不是，因为它包含质因子7。
+     * 习惯上我们把1当做是第一个丑数。求按从小到大的顺序的第N个丑数。*/
+    public static class SolutionJZ33{
+        public int GetUglyNumber_Solution(int index) {
+            if(index <= 0)return 0;
+            int p2=0,p3=0,p5=0;//初始化三个指向三个潜在成为最小丑数的位置
+            int[] result = new int[index];
+            result[0] = 1;//
+            for(int i=1; i < index; i++){
+                result[i] = Math.min(result[p2]*2, Math.min(result[p3]*3, result[p5]*5));
+                if(result[i] == result[p2]*2)p2++;//为了防止重复需要三个if都能够走到
+                if(result[i] == result[p3]*3)p3++;//为了防止重复需要三个if都能够走到
+                if(result[i] == result[p5]*5)p5++;//为了防止重复需要三个if都能够走到
+            }
+            return result[index-1];
+        }
+    }
 }
 
 

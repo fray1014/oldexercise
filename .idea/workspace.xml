@@ -20,42 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29de76b7-f76c-4d5b-80c8-dca019c6a30f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$ListNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$ListNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$Solution0.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$Solution0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ18.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ18.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ38.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ38.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ44.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ44.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ45.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ45.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ46.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ46.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ47.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ47.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ48.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ48.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ49.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ49.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ50.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ50.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ51.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ51.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ52.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ52.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ53.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ53.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ54.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ54.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ55.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ55.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ56.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ56.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ57.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ57.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ58.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ58.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ59.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ59.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ60.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ60.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ61.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ61.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ62.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ62.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ63$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ63$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ63.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ63.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ64.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ64.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ65.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ65.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ66.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ66.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ67.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ67.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$TreeLinkNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$TreeLinkNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$TreeNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$TreeNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LeetCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LeetCode.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

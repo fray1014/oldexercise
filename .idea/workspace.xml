@@ -20,9 +20,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29de76b7-f76c-4d5b-80c8-dca019c6a30f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Sort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Temp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$ListNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$ListNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$Solution0.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$Solution0.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ18.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ18.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ35.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ35.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ36.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ36.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ37.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ37.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ38.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ38.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ39.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ39.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ40.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ40.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ41.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ41.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ42.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ42.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ43.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ43.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ44.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ44.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ45.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ45.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ46.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ46.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ47.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ47.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ48.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ48.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ49.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ49.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ50.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ50.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ51.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ51.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ52.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ52.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ53.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ53.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ54.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ54.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ55.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ55.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ56.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ56.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ57.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ57.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ58.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ58.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ59.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ59.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ60.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ60.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ61.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ61.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ62.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ62.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ63$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ63$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ63.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ63.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ64.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ64.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ65.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ65.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ66.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ66.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ67.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ67.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$SolutionJZ9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$TreeLinkNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$TreeLinkNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$TreeNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode$TreeNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeetCode/LeetCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeetCode/LeetCode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LeetCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LeetCode.java" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +78,28 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LeetCode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="573">
+              <caret line="1535" column="28" lean-forward="true" selection-start-line="1535" selection-start-column="28" selection-end-line="1535" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Sort.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-547">
+              <caret line="85" column="19" lean-forward="true" selection-start-line="85" selection-start-column="19" selection-end-line="85" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -38,11 +107,56 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Node</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/Temp.java" />
+        <option value="$PROJECT_DIR$/src/Sort.java" />
+        <option value="$PROJECT_DIR$/src/LeetCode.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="77" />
+    <option name="y" value="217" />
+    <option name="width" value="1400" />
+    <option name="height" value="786" />
+  </component>
   <component name="ProjectId" id="1dzyqN6lVgirSrugcjWbozUqmNr" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="LeetCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LeetCode" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="LeetCode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LeetCode" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -55,9 +169,28 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
-  <component name="RunManager">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.LeetCode">
     <configuration name="LeetCode" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="LeetCode" />
+      <module name="LeetCode" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Temp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Temp" />
       <module name="LeetCode" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -66,6 +199,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.LeetCode" />
+        <item itemvalue="Application.Temp" />
       </list>
     </recent_temporary>
   </component>
@@ -82,12 +216,50 @@
     </task>
     <servers />
   </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32917467" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.32629558" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32917467" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+    </layout>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -106,7 +278,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state width="1877" height="176" key="GridCell.Tab.0.bottom" timestamp="1594828997003">
@@ -145,5 +316,28 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1594824236416" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Temp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LeetCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="573">
+          <caret line="1535" column="28" lean-forward="true" selection-start-line="1535" selection-start-column="28" selection-end-line="1535" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-547">
+          <caret line="85" column="19" lean-forward="true" selection-start-line="85" selection-start-column="19" selection-end-line="85" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

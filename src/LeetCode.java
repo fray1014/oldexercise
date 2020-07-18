@@ -2,8 +2,10 @@ import java.util.*;
 import java.util.regex.Pattern;
 public class LeetCode {
     public static void main(String[] args){
-        SolutionJZ35 s=new SolutionJZ35();
-
+        SolutionJZ30 s=new SolutionJZ30();
+        int[] a={1,-1,2,3,4,5,6};
+        int[] b= Arrays.copyOfRange(a,1,a.length);
+        System.out.println(b.length);
     }
     /*寻找两数之和（两遍哈希表）*/
     //给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
@@ -1328,6 +1330,213 @@ public class LeetCode {
             return result[index-1];
         }
     }
+
+    /**单链表逆序*/
+    public static ListNode reverse(ListNode head){
+        if(head==null || head.next==null)
+            return head;
+        ListNode prev=null;
+        while(head!=null){
+            ListNode tmp=head.next;
+            head.next=prev;
+            prev=head;
+            head=tmp;
+        }
+        return prev;
+    }
+
+    /**输入一个正整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。
+     * 例如输入数组{3，32，321}，则打印出这三个数字能排成的最小数字为321323。*/
+
+    public static class SolutionJZ32{
+        public String PrintMinNumber(int [] numbers) {
+
+            if(numbers == null || numbers.length == 0)return "";
+            for(int i=0; i < numbers.length; i++){
+                for(int j = i+1; j < numbers.length; j++){
+                    int sum1 = Integer.valueOf(numbers[i]+""+numbers[j]);
+                    int sum2 = Integer.valueOf(numbers[j]+""+numbers[i]);
+                    if(sum1 > sum2){
+                        int temp = numbers[j];
+                        numbers[j] = numbers[i];
+                        numbers[i] = temp;
+                    }
+                }
+            }
+            String str = new String("");
+            for(int i=0; i < numbers.length; i++)
+                str = str + numbers[i];
+            return str;
+
+        }
+    }
+
+    public static int DP(int n){
+
+        //递归
+        if(n==0)
+            return 0;
+        if(n==1){
+            return 1;
+        }
+        if(n==2){
+            return 2;
+        }
+        return DP(n-1)+DP(n-2);
+
+        //动态规划
+        /*
+        int[] a=new int[n+1];
+        a[0]=0;
+        a[1]=1;
+        a[2]=2;
+        for(int i=3;i<=n;i++){
+            a[i]=a[i-1]+a[i-2];
+        }
+        return a[n];*/
+    }
+
+    /**背包问题（动态规划）
+     * F(i,C)=max(F(i−1,C),v(i)+F(i−1,C−w(i)))*/
+    public static class KnapSack01 {
+        public static int knapSack(int[] w, int[] v, int C) {
+            int size = w.length;
+            if (size == 0) {
+                return 0;
+            }
+
+            int[] dp = new int[C + 1];
+            //初始化第一行
+            //仅考虑容量为C的背包放第0个物品的情况
+            for (int i = 0; i <= C; i++) {
+                dp[i] = w[0] <= i ? v[0] : 0;
+            }
+
+            for (int i = 1; i < size; i++) {
+                for (int j = C; j >= w[i]; j--) {
+                    dp[j] = Math.max(dp[j], v[i] + dp[j - w[i]]);
+                }
+            }
+            return dp[C];
+        }
+
+        /*
+        public static void main(String[] args) {
+            int[] w = {2, 1, 3, 2};
+            int[] v = {12, 10, 20, 15};
+            System.out.println(knapSack(w, v, 5));
+        }*/
+    }
+
+    /**1~n整数1的个数*/
+    public static class SolutionJZ31{
+        public int NumberOf1Between1AndN_Solution(int n) {
+            if(n==0){
+                return 0;
+            }
+            int cnt=0;
+            /*
+            return NumberOf1Between1AndN_Solution(n-1)+NumberOf1(n);*/
+            for(int i=1;i<=n;i++){
+                cnt+=NumberOf1(i);
+            }
+            return cnt;
+        }
+         public int NumberOf1(int n){
+            String str=Integer.toString(n);
+            char[] ch=str.toCharArray();
+            int cnt=0;
+            for(char c:ch){
+                if(c=='1'){
+                    cnt++;
+                }
+            }
+            return cnt;
+         }
+         //从位数上求1
+         /*
+            int count=0;
+            for(int i=n;i>0;i--){
+                for(int j=i;j>0;j/=10){
+                    if(j%10==1) count++;
+                }
+            }
+            return count;*/
+    }
+
+    /**连续子向量的最大和*/
+    public static class SolutionJZ30{
+        public int FindGreatestSumOfSubArray(int[] array) {
+
+            int max = array[0];
+            for (int i = 1; i < array.length; i++) {
+                array[i] += array[i - 1] > 0 ? array[i - 1] : 0;
+                max = Math.max(max, array[i]);
+            }
+            return max;
+
+        }
+    }
+
+    /**最小的K个数*/
+    public static class SolutionJZ29{
+        public ArrayList<Integer> GetLeastNumbers_Solution(int [] input, int k) {
+            ArrayList<Integer> list = new ArrayList<>();
+            if (input == null || input.length == 0 || k > input.length || k == 0)
+                return list;
+            int[] arr = new int[k + 1];//数组下标0的位置作为哨兵，不存储数据
+            //初始化数组
+            for (int i = 1; i < k + 1; i++)
+                arr[i] = input[i - 1];
+            buildMaxHeap(arr, k + 1);//构造大根堆
+            for (int i = k; i < input.length; i++) {
+                if (input[i] < arr[1]) {
+                    arr[1] = input[i];
+                    adjustDown(arr, 1, k + 1);//将改变了根节点的二叉树继续调整为大根堆
+                }
+            }
+            for (int i = 1; i < arr.length; i++) {
+                list.add(arr[i]);
+            }
+            return list;
+        }
+        /**
+         * @Author: ZwZ
+         * @Description: 构造大根堆
+         * @Param: [arr, length]  length:数组长度 作为是否跳出循环的条件
+         * @return: void
+         * @Date: 2020/1/30-22:06
+         */
+        public void buildMaxHeap(int[] arr, int length) {
+            if (arr == null || arr.length == 0 || arr.length == 1)
+                return;
+            for (int i = (length - 1) / 2; i > 0; i--) {
+                adjustDown(arr, i, arr.length);
+            }
+        }
+        /**
+         * @Author: ZwZ
+         * @Description: 堆排序中对一个子二叉树进行堆排序
+         * @Param: [arr, k, length]
+         * @return:
+         * @Date: 2020/1/30-21:55
+         */
+        public void adjustDown(int[] arr, int k, int length) {
+            arr[0] = arr[k];//哨兵
+            for (int i = 2 * k; i <= length; i *= 2) {
+                if (i < length - 1 && arr[i] < arr[i + 1])
+                    i++;//取k较大的子结点的下标
+                if (i > length - 1 || arr[0] >= arr[i])
+                    break;
+                else {
+                    arr[k] = arr[i];
+                    k = i; //向下筛选
+                }
+            }
+            arr[k] = arr[0];
+        }
+    }
+
 }
 
 

@@ -2,10 +2,10 @@ import java.util.*;
 import java.util.regex.Pattern;
 public class LeetCode {
     public static void main(String[] args){
-        SolutionJZ30 s=new SolutionJZ30();
-        int[] a={1,-1,2,3,4,5,6};
-        int[] b= Arrays.copyOfRange(a,1,a.length);
-        System.out.println(b.length);
+        SolutionJZ27 s=new SolutionJZ27();
+        String tmp1="aab";
+        String tmp2="a";
+        System.out.println(s.Permutation(tmp1));
     }
     /*寻找两数之和（两遍哈希表）*/
     //给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
@@ -1484,6 +1484,7 @@ public class LeetCode {
             ArrayList<Integer> list = new ArrayList<>();
             if (input == null || input.length == 0 || k > input.length || k == 0)
                 return list;
+            /*
             int[] arr = new int[k + 1];//数组下标0的位置作为哨兵，不存储数据
             //初始化数组
             for (int i = 1; i < k + 1; i++)
@@ -1497,6 +1498,15 @@ public class LeetCode {
             }
             for (int i = 1; i < arr.length; i++) {
                 list.add(arr[i]);
+            }
+            return list;*/
+            TreeSet<Integer> t=new TreeSet<>();
+            for(int i:input){
+                t.add(i);
+            }
+            for(int i=0;i<k;i++){
+                list.add(t.first());
+                t.pollFirst();
             }
             return list;
         }
@@ -1535,6 +1545,115 @@ public class LeetCode {
             }
             arr[k] = arr[0];
         }
+    }
+
+    /**数组中有一个数字出现的次数超过数组长度的一半，请找出这个数字。
+     * 例如输入一个长度为9的数组{1,2,3,2,2,2,5,4,2}。由于数字2在数组中出现了5次，超过数组长度的一半，
+     * 因此输出2。如果不存在则输出0。*/
+    public static class SolutionJZ28{
+        public int MoreThanHalfNum_Solution(int [] array) {
+
+            if(array==null)
+                return 0;
+            if(array.length==1)
+                 return array[0];
+            HashMap<Integer,Integer> hm=new HashMap<>();
+            for(int i:array){
+                if(!hm.containsKey(i)){
+                    hm.put(i,1);
+                }else{
+                    int tmp=hm.get(i);
+                    tmp++;
+                    if(tmp>array.length/2){
+                        return i;
+                    }
+                    hm.put(i,tmp);
+                }
+            }
+            return 0;
+            /*
+            if(array == null || array.length == 0)return 0;
+            int preValue = array[0];//用来记录上一次的记录
+            int count = 1;//preValue出现的次数（相减之后）
+            for(int i = 1; i < array.length; i++){
+                if(array[i] == preValue)
+                    count++;
+                else{
+                    count--;
+                    if(count == 0){
+                        preValue = array[i];
+                        count = 1;
+                    }
+                }
+            }
+            int num = 0;//需要判断是否真的是大于1半数，这一步骤是非常有必要的，因为我们的上一次遍历只是保证如果存在超过一半的数就是preValue，但不代表preValue一定会超过一半
+            for(int i=0; i < array.length; i++)
+                if(array[i] == preValue)
+                    num++;
+            return (num > array.length/2)?preValue:0;*/
+
+        }
+    }
+
+    /**字符串排列*/
+    public static class SolutionJZ27{
+
+        public ArrayList<String> PermutationHelp(StringBuilder str){
+
+            ArrayList<String> result = new  ArrayList<String>();
+            if(str.length() == 1)result.add(str.toString());
+            else{
+                for(int i = 0; i < str.length(); i++){
+                    if(i== 0  || str.charAt(i) != str.charAt(0)){
+                        char temp = str.charAt(i);
+                        str.setCharAt(i, str.charAt(0));
+                        str.setCharAt(0, temp);
+                        ArrayList<String> newResult = PermutationHelp(new StringBuilder(str.substring(1)));
+                        for(int j =0; j < newResult.size(); j++)
+                            result.add(str.substring(0,1)+newResult.get(j));
+                        //用完还是要放回去的
+                        temp = str.charAt(0);
+                        str.setCharAt(0, str.charAt(i));
+                        str.setCharAt(i, temp);
+                    }
+                }
+                //需要在做一个排序操作
+
+            }
+            return result;
+        }
+
+        public ArrayList<String> Permutation(String str) {
+            StringBuilder strBuilder = new StringBuilder(str);
+            ArrayList<String> result = PermutationHelp(strBuilder);
+            return result;
+        }
+        /*
+        ArrayList<String> a=new ArrayList<>();
+        public ArrayList<String> Permutation(String str) {
+
+            if(str==null||str.length()<0){
+                return a;
+            }
+            char[] c=str.toCharArray();
+            Permutation(c,0);
+            return a;
+        }
+        public void Permutation(char[] c,int index){
+            if(index>=c.length){
+                a.add(c.toString());
+            }else{
+                for(int i=index;i<c.length;++i){
+                    char tmp=c[i];
+                    c[i]=c[index];
+                    c[index]=tmp;
+                    Permutation(c,i+1);
+                    tmp=c[i];
+                    c[i]=c[index];
+                    c[index]=tmp;
+                }
+            }
+        }*/
     }
 
 }

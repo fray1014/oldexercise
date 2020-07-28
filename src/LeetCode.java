@@ -2,10 +2,7 @@ import java.util.*;
 import java.util.regex.Pattern;
 public class LeetCode {
     public static void main(String[] args){
-        SolutionJZ27 s=new SolutionJZ27();
-        String tmp1="aab";
-        String tmp2="a";
-        System.out.println(s.Permutation(tmp1));
+        System.out.println(TestStatic.test());
     }
     /*寻找两数之和（两遍哈希表）*/
     //给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
@@ -1654,6 +1651,49 @@ public class LeetCode {
                 }
             }
         }*/
+    }
+    /**斐波那契数列*/
+    public class SolutionJZ7 {
+        public int Fibonacci(int n) {
+            if(n<=0)
+                return 0;
+            if(n==1)
+                return 1;
+            return Fibonacci(n-1)+Fibonacci(n-2);
+        }
+    }
+
+    /**输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的双向链表。
+     * 要求不能创建任何新的结点，只能调整树中结点指针的指向。*/
+    public class SolutionJZ26{
+        public TreeNode Convert(TreeNode pRootOfTree) {
+            if(pRootOfTree == null){
+                return null;
+            }
+            ArrayList<TreeNode> list = new ArrayList<>();
+            Convert(pRootOfTree, list);
+            return Convert(list);
+        }
+
+        public void Convert(TreeNode pRootOfTree, ArrayList<TreeNode> list){
+            if(pRootOfTree.left != null){
+                Convert(pRootOfTree.left, list);
+            }
+
+            list.add(pRootOfTree);
+
+            if(pRootOfTree.right != null){
+                Convert(pRootOfTree.right, list);
+            }
+        }
+
+        public TreeNode Convert(ArrayList<TreeNode> list){
+            for(int i = 0; i < list.size() - 1; i++){
+                list.get(i).right = list.get(i + 1);
+                list.get(i + 1).left = list.get(i);
+            }
+            return list.get(0);
+        }
     }
 
 }

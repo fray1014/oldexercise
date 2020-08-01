@@ -1,5 +1,4 @@
 import org.junit.Test;
-
 import java.util.*;
 
 public class LeetCode2 {
@@ -150,6 +149,231 @@ public class LeetCode2 {
                     return false;
             }
             return helpVerify(a,start,i-1)&&helpVerify(a,i,root-1);
+        }
+    }
+
+    /**输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否可能为该栈的弹出顺序*/
+    public static class SolutionJZ21{
+        public boolean IsPopOrder(int [] pushA,int [] popA) {
+            if(pushA.length!=popA.length||pushA.length==0||popA.length==0){
+                return false;
+            }
+            Stack<Integer> s=new Stack<>();
+            int indexi=0;
+            int indexj=0;
+            while(indexi<pushA.length){
+                if(pushA[indexi]==popA[indexj]){
+                    indexi++;
+                    indexj++;
+                }else{
+                    s.push(pushA[indexi++]);
+                }
+            }
+            while(!s.isEmpty()){
+                if(s.pop()!=popA[indexj]){
+                    return false;
+                }
+                indexj++;
+            }
+            return true;
+
+        }
+    }
+
+    /**定义栈的数据结构，请在该类型中实现一个能够得到栈中所含最小元素的min函数（时间复杂度应为O（1））。*/
+    public static class SolutionJZ20{
+        static Stack<Integer> normal=new Stack<Integer>();
+        static Stack<Integer> find=new Stack<Integer>();
+        public void push(int node) {
+            normal.push(node);
+            if(find.empty()||find.peek()>=node){
+                find.push(node);
+            }
+        }
+
+        public void pop() {
+            int tmp=normal.pop();
+            if(tmp==find.peek()){
+                find.pop();
+            }
+        }
+
+        public int top() {
+            return normal.peek();
+        }
+
+        public int min() {
+            return find.peek();
+        }
+    }
+    /**从上往下打印出二叉树的每个节点，同层节点从左至右打印。*/
+    public static class SolutionJZ22 {
+
+        public ArrayList<Integer> PrintFromTopToBottom(TreeNode root) {
+            Queue<TreeNode> queue=new LinkedList<>();
+            ArrayList<Integer> arr=new ArrayList<>();
+            if(root==null)
+                return arr;
+            queue.offer(root);
+            while(!queue.isEmpty()){
+                TreeNode tmp=queue.poll();
+                arr.add(tmp.val);
+                if(tmp.left!=null)
+                    queue.offer(tmp.left);
+                if(tmp.right!=null)
+                    queue.offer(tmp.right);
+            }
+            return arr;
+        }
+    }
+
+    /**输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字*/
+    public static class SolutionJZ19{
+        public ArrayList<Integer> printMatrix(int [][] matrix) {
+            ArrayList<Integer> list=new ArrayList<>();
+            if(matrix.length==0)
+                return list;
+            int up = 0;
+            int down = matrix.length-1;
+            int left = 0;
+            int right = matrix[0].length-1;
+            while(true){
+                // 最上面一行
+                for(int col=left;col<=right;col++){
+                    list.add(matrix[up][col]);
+                }
+                // 向下逼近
+                up++;
+                // 判断是否越界
+                if(up > down){
+                    break;
+                }
+                // 最右边一行
+                for(int row=up;row<=down;row++){
+                    list.add(matrix[row][right]);
+                }
+                // 向左逼近
+                right--;
+                // 判断是否越界
+                if(left > right){
+                    break;
+                }
+                // 最下面一行
+                for(int col=right;col>=left;col--){
+                    list.add(matrix[down][col]);
+                }
+                // 向上逼近
+                down--;
+                // 判断是否越界
+                if(up > down){
+                    break;
+                }
+                // 最左边一行
+                for(int row=down;row>=up;row--){
+                    list.add(matrix[row][left]);
+                }
+                // 向右逼近
+                left++;
+                // 判断是否越界
+                if(left > right){
+                    break;
+                }
+            }
+            return list;
+        }
+    }
+
+    /**输入两棵二叉树A，B，判断B是不是A的子结构*/
+    public static class SolutionJZ17{
+        public boolean HasSubtree(TreeNode root1,TreeNode root2) {
+            if(root2==null||root1==null)
+                return false;
+            return HasSubtree(root1.left,root2)||HasSubtree(root1.right,root2)||isNodeSame(root1,root2);
+        }
+
+        public boolean isNodeSame(TreeNode root1,TreeNode root2){
+            if(root2==null)
+                return true;
+            if(root1==null)
+                return false;
+            if(root1.val!=root2.val){
+                return false;
+            }
+            return isNodeSame(root1.left,root2.left)&&isNodeSame(root1.right,root2.right);
+
+        }
+    }
+
+    /**反转链表*/
+    public class ListNode {
+        int val;
+        ListNode next = null;
+
+        ListNode(int val) {
+            this.val = val;
+        }
+    }
+    public class SolutionJZ15 {
+        public ListNode ReverseList(ListNode head) {
+            ListNode pre=null;
+            while(head!=null){
+                ListNode next=head.next;
+                head.next=pre;
+                pre=head;
+                head=next;
+            }
+            return pre;
+        }
+    }
+
+    /**合并链表*/
+    public class SolutionJZ16{
+        public ListNode Merge(ListNode list1,ListNode list2) {
+            ListNode head=new ListNode(1);
+            ListNode cur=head;
+            while(list1!=null&&list2!=null){
+                if(list1.val<=list2.val){
+                    cur.next=list1;
+                    list1=list1.next;
+                }else{
+                    cur.next=list2;
+                    list2=list2.next;
+                }
+                cur=cur.next;
+            }
+            if(list1!=null)
+                cur.next=list1;
+            if(list2!=null)
+                cur.next=list2;
+            return head.next;
+        }
+    }
+
+    /**倒数第K个结点*/
+    public class SolutionJZ14{
+        public ListNode FindKthToTail(ListNode head,int k) {
+            if(head==null||k==0)
+                return head;
+            ListNode slow=head;
+            ListNode fast=head;
+            for(int i=0;i<k;i++){
+                if(fast==null)
+                    return fast;
+                fast=fast.next;
+            }
+            while(fast!=null){
+                fast=fast.next;
+                slow=slow.next;
+            }
+            return slow;
+        }
+    }
+
+    /**输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有的奇数位于数组的前半部分，
+     * 所有的偶数位于数组的后半部分，并保证奇数和奇数，偶数和偶数之间的相对位置不变。*/
+    public class SolutionJZ13{
+        public void reOrderArray(int [] array) {
+
         }
     }
 }

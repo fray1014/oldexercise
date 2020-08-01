@@ -1,3 +1,5 @@
+import org.junit.Test;
+
 import java.util.*;
 import java.util.regex.Pattern;
 public class LeetCode {
@@ -1694,6 +1696,10 @@ public class LeetCode {
             }
             return list.get(0);
         }
+    }
+    @Test
+    public void test(){
+        System.out.println(new BigData().add("10","20"));
     }
 
 }
